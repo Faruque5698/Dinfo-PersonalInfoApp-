@@ -12,6 +12,14 @@ class ApiResponse
             'data'=>$data
         ],200);
     }
+    public function successWitMessage($data,$message){
+        return response()->json([
+            'code'=>200,
+            'status'=>true,
+            'message'=>$message,
+            'data'=>$data
+        ],200);
+    }
 
     public function send_Otp($data){
         return response()->json([

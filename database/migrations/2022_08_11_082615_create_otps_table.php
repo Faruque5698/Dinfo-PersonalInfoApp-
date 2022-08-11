@@ -17,7 +17,7 @@ class CreateOtpsTable extends Migration
             $table->id();
             $table->string('mobile');
             $table->string('otp');
-            $table->string('signature');
+            $table->string('signature')->nullable();
             $table->timestamps();
         });
     }
