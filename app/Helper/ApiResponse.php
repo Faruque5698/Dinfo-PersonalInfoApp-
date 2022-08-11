@@ -13,6 +13,15 @@ class ApiResponse
         ],200);
     }
 
+    public function send_Otp($data){
+        return response()->json([
+            'code'=>200,
+            'status'=>true,
+            'message'=>"OTP Sent",
+            'data'=>$data
+        ],200);
+    }
+
     public function error($code,$message){
         return response()->json([
            'code'=>$code,
