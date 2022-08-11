@@ -15,7 +15,12 @@ use Illuminate\Support\Facades\Route;
 */
 
 
-Route::post('register',[\App\Http\Controllers\Api\AuthController::class,'send_otp_register']);
+Route::post('register_send_otp',[\App\Http\Controllers\Api\AuthController::class,'send_otp_register']);
+Route::post('login_send_otp',[\App\Http\Controllers\Api\AuthController::class,'send_login_otp']);
+
+Route::post('otp_check',[\App\Http\Controllers\Api\AuthController::class,'otp_check']);
+Route::post('pin_set',[\App\Http\Controllers\Api\AuthController::class,'pin_set']);
+Route::post('login',[\App\Http\Controllers\Api\AuthController::class,'login']);
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
