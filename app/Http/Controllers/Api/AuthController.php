@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers\Api;
 
+use App\Helper\ApiResponse;
 use App\Http\Controllers\Controller;
 use App\Models\Otp;
 use App\Models\User;
@@ -85,11 +86,17 @@ class AuthController extends Controller
 
         $otp->save();
 
-        return response()->json([
-            'message'=>'Otp Send',
-            'data'=>$otp
-        ]);
+
+        return ApiResponse::send_Otp($otp);
+//        return response()->json([
+//            'message'=>'Otp Send',
+//            'data'=>$otp
+//        ]);
 
 //        return response()->json($response) ;
     }
+
+
 }
+
+
